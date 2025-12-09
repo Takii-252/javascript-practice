@@ -54,3 +54,50 @@ if (age2 > 10) {
 } else {
   console.log("年下ですね");
 }
+
+//学習5 else if
+const age3 = 15;
+if (age3 > 20) {
+  console.log("年上ですね");
+} else if (age3 > 10) {
+  console.log("同じ年ですね");
+} else {
+  console.log("年下ですね");
+}
+
+//学習6 &&
+const age4 = 11;
+if (age4 > 10 && age4 <= 20) {
+  console.log("合ってます");
+}
+
+//学習7 switch文1
+const a1 = 1;
+switch (a1) {
+  case 1:
+    console.log("１です");
+    break;
+  case 2:
+    console.log("2です");
+    break;
+  case 3:
+    console.log("3です");
+    break;
+}
+
+//学習7 switch文2
+const a2 = 4;
+switch (a2) {
+  case 1:
+    console.log("１です");
+    break;
+  case 2:
+    console.log("2です");
+    break;
+  case 3:
+    console.log("3です");
+    break;
+  default:
+    console.log("一致しません");
+    break;
+}
