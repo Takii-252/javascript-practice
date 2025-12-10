@@ -101,3 +101,31 @@ switch (a2) {
     console.log("一致しません");
     break;
 }
+
+//学習8 フェーズ2 変数の復習
+let number1 = 0;
+number1 += 1;
+console.log(number1);
+number1 += 1;
+console.log(number1);
+
+//学習9 while文
+let number2 = 1;
+while (number2 < 4) {
+  console.log(number2);
+  number2 += 1;
+}
+
+//学習10 for文
+for (let number3 = 5; number3 <= 7; number3++) {
+  console.log(number3);
+}
+
+//学習10 繰り返し処理まとめ
+for (let number4 = 1; number4 <= 5; number4++) {
+  if (number4 === 5) {
+    console.log("5です");
+  } else {
+    console.log(number4);
+  }
+}
