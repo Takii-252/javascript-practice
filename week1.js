@@ -121,11 +121,40 @@ for (let number3 = 5; number3 <= 7; number3++) {
   console.log(number3);
 }
 
-//学習10 繰り返し処理まとめ
+//学習11 繰り返し処理まとめ
 for (let number4 = 1; number4 <= 5; number4++) {
   if (number4 === 5) {
     console.log("5です");
   } else {
     console.log(number4);
   }
+}
+
+//学習11 配列
+const anime1 = ["あい", "みさき", "たかし"];
+console.log(anime1);
+
+//学習12 配列の要素の取得
+//配列はそれぞれの番号で出力できる
+console.log(anime1[0]);
+console.log(anime1[1]);
+
+//学習13 配列の要素の更新
+//配列の一部であれば更新が可能
+anime1[0] = "たろう";
+console.log(anime1[0]);
+
+//学習14 配列と繰り返し
+//配列の値を個別に指定しなくてもforで範囲を指定すれば取り出すことが可能
+const anime2 = ["くま", "おいし", "うまじ"];
+for (let i = 0; i < 3; i++) {
+  console.log(anime2[i]);
+}
+
+//学習15 配列と繰り返し2
+//lengthを使用すると配列の要素の数を取得できるので、配列の中身の数が変わっても大丈夫で便利
+//for文などにそのまま使用することも可能
+console.log(anime2.length);
+for (let i = 0; i < anime2.length; i++) {
+  console.log(anime2[i]);
 }
