@@ -158,3 +158,41 @@ console.log(anime2.length);
 for (let i = 0; i < anime2.length; i++) {
   console.log(anime2[i]);
 }
+
+//学習16 オブジェクト
+//特定のルールを使用すると二つの要素をもつオブジェクトを代入することが出来る
+const character1 = { name: "ふとし", age: 25 };
+console.log(character1);
+
+//学習17 オブジェクトの取得、更新
+//変数名.オブジェクト名とすることで値の取得と更新が出来る
+console.log(character1.name);
+character1.age = 30;
+console.log(character1);
+
+//学習18 オブジェクトを要素に持つ配列
+//今までの配列にそのままオブジェクトを入れることが出来る
+//配列を取り出すのは今まで通り、番号を指定する必要があるが、特定の要素は(characters[1].age)のように指定が必要
+const character2 = [
+  { name: "たかし", age: 20 },
+  { name: "ひとし", age: 40 },
+];
+console.log(character2[0]);
+console.log(character2[1].age);
+
+//学習19　オブジェクトを要素に持つ配列2（演習）
+//別の定数を定義すること例えば
+// const character = characters[i];とすると
+// 「charactersリストのi番目の住人のことを、このループの中では、特別にcharacterという、分かりやすいニックネームで呼ぶことにするよ！」
+// こうすることで、
+// characters[i].name と書く代わりに、character.name と書ける。
+// characters[i].age と書く代わりに、character.age と書ける。
+for (let i = 0; i < character2.length; i++) {
+  console.log("-----------------");
+
+  const character = character2[i];
+
+  console.log(`僕は${character.name}です`);
+
+  console.log(character.age + "歳です");
+}
