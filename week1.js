@@ -176,6 +176,7 @@ console.log(character1);
 const character2 = [
   { name: "たかし", age: 20 },
   { name: "ひとし", age: 40 },
+  { name: "むさし" },
 ];
 console.log(character2[0]);
 console.log(character2[1].age);
@@ -194,5 +195,17 @@ for (let i = 0; i < character2.length; i++) {
 
   console.log(`僕は${character.name}です`);
 
-  console.log(character.age + "歳です");
+  if (character.age === undefined) {
+    console.log("年齢は秘密です");
+  } else {
+    console.log(`${character.age}歳です`);
+  }
 }
+
+//学習20　undefined
+//配列やオブジェクトに指定していないものが入っていると表示される内容
+//（179行目をageを欠けたものに修正するとundefined歳と表示される）
+
+//学習21　undefinedの対応
+//undefinedを出さないようにするためにfor文の中にif文を追加し対処するやり方がある
+//198行目に追記
