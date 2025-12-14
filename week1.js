@@ -209,3 +209,34 @@ for (let i = 0; i < character2.length; i++) {
 //学習21　undefinedの対応
 //undefinedを出さないようにするためにfor文の中にif文を追加し対処するやり方がある
 //198行目に追記
+
+//学習22　総合演習1
+//オブジェクトの中にさらに別のオブジェクトを入れることで、細かい要素を言えることが出来る
+//一つの定数の中に複数の役割を与えるような複雑な処理が可能になる
+const cafe = {
+  name: "インディア",
+  cafetime: {
+    //例えばここでcafetimeプロパティに対応するオブジェクトを追加することが出来る
+    opning: "10時",
+    closing: "23時",
+  },
+};
+console.log(`店名は${cafe.name}です`);
+console.log(
+  `営業時間は${cafe.cafetime.opning}から${cafe.cafetime.closing}です`
+);
+
+//学習23　総合演習2
+//オブジェクトの値には配列を用いることもできます
+//配列を用いることで、オブジェクトとは異なったルールの処理が可能です。
+const cafe2 = {
+  name: "アバレスト",
+  //例えばここでmenusという配列を追加することもできる
+  menus: ["お茶", "プーアル茶", "ハトムギ茶"],
+};
+console.log(`店名は${cafe2.name}です`);
+console.log(`------------------------------`);
+console.log(`おすすめメニューはこちら`);
+for (let i = 0; i < cafe2.menus.length; i++) {
+  console.log(cafe2.menus[i]);
+}
