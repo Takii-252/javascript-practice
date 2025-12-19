@@ -153,3 +153,81 @@ const animal5 = new Animal4();
 // 「定義した上で、部品や指示を自由に取り出せる」
 console.log(`名前:${animal5.name}`);
 console.log(`年齢:${animal5.age}`);
+
+//*学習36 コンストラクタ3
+//コンストラクタでは、関数と同じように、引数を受け取ることが可能です。
+// 「constructor」の後の括弧「( )」内に引数名を記述することで、
+// その引数をコンストラクタの処理内で使用できます。
+// コンストラクタに引数として値を渡すには
+// 「new クラス名()」の括弧「( )」内に値を追加します。
+class Animal5 {
+  constructor(name, age) {
+    // 上のように引数を定義
+    this.name = name;
+    this.age = age;
+  }
+}
+const animal6 = new Animal5("ごろう", 10);
+// 上のようにインスタンスに値を渡す
+console.log(`名前:${animal6.name}`);
+console.log(`年齢:${animal6.age}`);
+
+//*学習37 メソッド
+//メソッドはクラスの中で定義します。
+// 「メソッド名() { }」とすることでメソッドは定義できます。
+// メソッドは、そのクラスから生成したインスタンスに対して呼び出します。
+// 具体的には「インスタンス.メソッド名()」とすることでそのメソッドを呼び出し、処理を実行することができます。
+class Animal6 {
+  constructor(name, age) {
+    // 上のように引数を定義
+    this.name = name;
+    this.age = age;
+    // スコープの観点でクラス内のプロパティはクラスごとに処理されるため
+    // 同じでも全く問題ない
+  }
+  agree() {
+    console.log("こんにちは");
+  }
+}
+const animal7 = new Animal6("たろう", 25);
+// 上のようにインスタンスに値を渡す
+console.log(`名前:${animal7.name}`);
+console.log(`年齢:${animal7.age}`);
+animal7.agree();
+
+//*学習37 メソッド2
+//メソッド内でインスタンスの値を使用するには、
+// 「this」という特殊な値を用いて、「this.プロパティ名」とします。
+class Animal7 {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  agree() {
+    console.log(`僕の名前は${this.name}です`);
+    // 上のメソッド内でそのように定義すると値を使用できる
+  }
+}
+const animal8 = new Animal7("たろう", 25);
+// 上のようにインスタンスに値を渡す
+animal8.agree();
+
+//*学習37 メソッド内でのメソッドの呼び出し
+//メソッド内で「this.メソッド名()」とすることで、
+// 同じクラスの他のメソッドを使うことができます。
+class Animal8 {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  agree() {
+    console.log(`僕の名前は${this.name}です`);
+  }
+  info() {
+    this.agree();
+    //ここで使用するメソッドをしていする
+  }
+}
+const animal9 = new Animal8("たろう", 25);
+// 上のようにインスタンスに値を渡す
+animal9.info();
