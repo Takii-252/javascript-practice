@@ -225,7 +225,7 @@ class Animal8 {
   }
   info() {
     this.agree();
-    //ここで使用するメソッドをしていする
+    //ここで使用するメソッドを指定している「agreeは上にあるのメソッド」なので実質infoメソッドはagreeメソッドの指示をなぞることになる
   }
 }
 const animal9 = new Animal8("たろう", 25);
@@ -236,7 +236,11 @@ animal9.info();
 //「継承」とは、すでにあるクラスをもとに、新しくクラスを作成する方法
 // 例えば「Animalクラス」から「Dogクラス」を継承すると、
 // 「Animalクラス」の全ての機能を引き継いで、「Dogクラス」を作成することができます。
-class Dog extends Animal8 {}
+class Dog extends Animal8 {
+  gethumanage() {
+    return this.age * 7;
+  }
+}
 
 //*学習39 継承したクラスを使う
 //「Dogクラス」は「Animalクラス」のすべての機能を引き継いでいます。
@@ -245,3 +249,34 @@ class Dog extends Animal8 {}
 // 「infoメソッド」などを使用することができます。
 const dog = new Dog("ごろう", 20);
 dog.info();
+
+//*学習40 メソッドの追加
+//継承して作成したクラスにも、
+// これまでと同じようにメソッドを追加することができます。
+// メソッドでは、関数と同じように戻り値を用いることができます。
+// 子クラスで定義した独自のメソッドは、親クラスから呼び出すことはできません。
+const humanage = dog.gethumanage();
+// gethumanageのメソッドで作った戻り値を持ってくる
+
+console.log(`私は${humanage}歳になりました`);
+
+//*学習41 オーバライド
+//親クラスと同じ名前のメソッドを子クラスに定義すると、子クラスのメソッドが優先して使用されます。
+// 子クラスのメソッドが親クラスのメソッドを上書きしていることから、
+// オーバーライドと呼ばれます。
+// ※クラスは親クラスからいくつも分岐が出来
+// 孫クラスの作成も可能
+class Cat extends Animal8 {
+  info() {
+    this.agree();
+    // 元のinfoメソッドをオーバライドする
+    const humanage = this.gethumanage();
+    console.log(`猫年齢で${humanage}歳です`);
+  }
+  gethumanage() {
+    return this.age * 5;
+  }
+}
+
+const cat = new Cat("ハナ", 2);
+cat.info();
