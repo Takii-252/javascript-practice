@@ -311,3 +311,5 @@ class Bard extends Animal8 {
 }
 const bard = new Bard("ハナ", 2, "カラス");
 bard.info();
+export default Bard;
+// 他のファイルでも使えるようにエクスポート
