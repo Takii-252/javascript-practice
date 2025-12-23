@@ -313,3 +313,6 @@ const bard = new Bard("ハナ", 2, "カラス");
 bard.info();
 export default Bard;
 // 他のファイルでも使えるようにエクスポート
+
+const test1 = "Hello World";
+export { test1 };
