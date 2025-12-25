@@ -56,3 +56,42 @@ console.log(chalk.yellow("Hello"));
 
 //*学習48 パッケージ2
 // readline-syncという入力値を使うパッケージの紹介があったが、一旦省略
+
+//*学習49 PUSHメソッド
+// pushメソッドとは、配列の最後に新しい要素を追加するメソッドです。
+// pushメソッドの後の()の中に追加したい要素を入力します。
+const characters = ["ウマ", "ヒツジ"];
+console.log(characters);
+characters.push("カニ");
+console.log(characters);
+
+//*学習49 PUSHメソッド
+// forEachメソッドは配列の中の要素を1つずつ取り出して、全ての要素に繰り返し同じ処理を行うメソッドです
+// forEachメソッドの引数には、アロー関数が入っています。
+// 配列内の要素が1つずつ順番にアロー関数の引数に代入され、処理が繰り返し実行されます。
+// 引数に入っている関数はコールバック関数と呼びます。
+const characters2 = ["ゴリラ", "ラマ"];
+characters2.forEach((character) => {
+  console.log(character);
+});
+
+//*学習49 findメソッド
+// findメソッドとは、条件式に合う1つ目の要素を配列の中から取り出すメソッドです。
+// コールバック関数の中は { return 条件 } と書くことで、条件に合う要素が戻り値となります。
+// findメソッドは条件に合う要素が見つかった時に終了するので、条件に合う最初の1つの要素しか取り出せません。
+// 配列の要素がオブジェクトの場合もfindメソッドを使うことができます。
+// オブジェクトのプロパティを条件として使用する場合、そのプロパティを持っているオブジェクトそのものを取り出します。
+const numbers = [1, 2, 3];
+const foundnumber = numbers.find((number) => {
+  return number === 3;
+});
+console.log(foundnumber);
+
+const characterss = [
+  { id: 1, name: "わんこ" },
+  { id: 2, name: "ねこ" },
+];
+const foundcharacterss = characterss.find((chara) => {
+  return chara.id === 2;
+});
+console.log(foundcharacterss);
