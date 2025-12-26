@@ -95,3 +95,55 @@ const foundcharacterss = characterss.find((chara) => {
   return chara.id === 2;
 });
 console.log(foundcharacterss);
+
+//*学習50 filterメソッド
+// filterメソッドとは記述した条件に合う要素のみを取り出して新しい配列を作成するメソッドです。
+// 使い方はfindメソッドと変わりませんが、該当する値や文字列が全て出力されます
+const numbers1 = [1, 4, 6];
+const foundnumber1 = numbers1.filter((number) => {
+  return number % 2 === 0;
+});
+console.log(foundnumber1);
+
+const characterss1 = [
+  { name: "たかし", age: 20 },
+  { name: "ひろゆき", age: 10 },
+];
+const foundcharacterss1 = characterss1.find((chara) => {
+  return chara.age > 10;
+});
+console.log(foundcharacterss1);
+
+//*学習51 mapメソッド
+// mapメソッドとは、配列内のすべての要素に処理を行い、その戻り値から新しい配列を作成するメソッドです。
+// 予め作った配列やオブジェクトすべてに同じ処理を実行できるメソッドというイメージ
+const numbers2 = [1, 4, 6];
+const foundnumber2 = numbers2.map((number) => {
+  return number * 2;
+});
+console.log(foundnumber2);
+
+const characterss2 = [
+  { firstName: "たかし", lastName: "ちば" },
+  { firstName: "ごり", lastName: "あいうち" },
+];
+const foundcharacterss2 = characterss2.map((chara) => {
+  return chara.firstName + chara.lastName;
+});
+console.log(foundcharacterss2);
+
+//*学習52 コールバック関数とは
+// 関数は、関数名の後ろに()をつけると呼び出され、()をつけなければ関数そのものを指します。
+// あらかじめ定義した定数①に出力内容を入れて
+// 別の定数②を用意し、そこにも出力内容を入れてかつ引数を設定する。
+// その引数に対し、①の定数を示すものを最後にcall(定数);という形で書く
+// さらにバックしていきたい関数内にcallback();と書くと処理が巻き戻っていく
+const printwanko = () => {
+  console.log("にんじゃわんこ");
+};
+
+const call = (callback) => {
+  console.log("コールバック関数を呼び出します");
+  callback();
+};
+call(printwanko);
